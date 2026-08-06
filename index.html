@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 中部ダンスフェスティバル in 名古屋｜プロ出場申込フォーム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root {
+  --gold:       #c9a84c;
+  --gold-light: #f0d080;
+  --deep-blue:  #0d1b3e;
+  --navy:       #1a2a5e;
+  --accent:     #2e4a9e;
+  --bg:         #f4f6fb;
+  --border:     #d0d8e8;
+  --text:       #1a1a2e;
+  --text-muted: #6b7280;
+  --error:      #dc2626;
+  --success:    #059669;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+h1,h2,h3 { font-family: 'Noto Serif JP', serif; }
+
+/* ===== Header ===== */
+header {
+  position: relative;
+  background: linear-gradient(135deg, var(--deep-blue) 0%, var(--navy) 55%, var(--accent) 100%);
+  color: #fff;
+  padding: 36px 20px 30px;
+  text-align: center;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 40px);
+  pointer-events: none;
+}
+header .badge {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+  background: rgba(201,168,76,0.18); color: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 20px; padding: 4px 16px; margin-bottom: 14px;
+  position: relative; z-index: 1;
+}
+header h1 {
+  font-size: 26px; font-weight: 900; margin-bottom: 6px;
+  position: relative; z-index: 1;
+}
+header .sub { font-size: 14px; color: rgba(255,255,255,0.85); position: relative; z-index: 1; margin-bottom: 4px; }
+header .meta {
+  margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  position: relative; z-index: 1;
+}
+header .meta span {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px; padding: 8px 14px; font-size: 12.5px; display: flex; align-items: center; gap: 6px;
+}
+header .meta i { color: var(--gold-light); }
+header .deadline {
+  margin-top: 14px; display: inline-block; position: relative; z-index: 1;
+  background: rgba(220,38,38,0.18); border: 1px solid rgba(248,113,113,0.5);
+  color: #fecaca; font-weight: 700; font-size: 13px; padding: 7px 16px; border-radius: 8px;
+}
+
+/* ===== Container / Step bar ===== */
+.container { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.step-bar {
+  display: flex; align-items: center; justify-content: center;
+  margin: 26px 0 22px; gap: 6px;
+}
+.step-bar .step {
+  display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 700; color: var(--text-muted);
+}
+.step-bar .step .dot {
+  width: 26px; height: 26px; border-radius: 50%; background: #e5e9f2; color: #9aa3b5;
+  display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900;
+}
+.step-bar .step.active .dot { background: var(--gold); color: #fff; }
+.step-bar .step.active { color: var(--text); }
+.step-bar .step.done .dot { background: var(--success); color: #fff; }
+.step-bar .line { width: 34px; height: 2px; background: #d8dee8; }
+
+/* ===== Cards ===== */
+.card {
+  background: #fff; border-radius: 14px; padding: 22px 22px 20px;
+  margin-bottom: 18px; box-shadow: 0 4px 20px rgba(13,27,62,0.08);
+}
+.card-title {
+  font-size: 15.5px; font-weight: 900; color: var(--text);
+  border-left: 4px solid var(--gold); padding-left: 10px; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 8px;
+}
+.card-title i { color: var(--gold); }
+
+.notice-box {
+  background: #f0f4ff; border: 1px solid #d4dcf5; border-radius: 12px;
+  padding: 16px 18px; margin-bottom: 18px; font-size: 13px; color: var(--text);
+}
+.notice-box b { color: var(--accent); }
+
+/* ===== Form elements ===== */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: 12.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px;
+}
+.form-group .req { color: var(--error); margin-left: 3px; }
+.form-group .opt { color: var(--text-muted); font-weight: 400; font-size: 11px; }
+.form-group input[type=text], .form-group input[type=email], .form-group input[type=tel], .form-group input[type=date] {
+  width: 100%; background: #f9fafb; border: 1.5px solid var(--border); border-radius: 8px;
+  font-size: 14.5px; padding: 10px 12px; outline: none; color: var(--text); font-family: inherit;
+}
+.form-group input:focus {
+  border-color: var(--gold); background: #fff; box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+}
+.form-group input.err { border-color: var(--error) !important; }
+.err-msg { display: none; color: var(--error); font-size: 11.5px; font-weight: 700; margin-top: 5px; }
+.err-msg.show { display: block; }
+
+/* 選手情報：リーダー／パートナー2列 */
+.player-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+@media (max-width: 560px) { .player-grid { grid-template-columns: 1fr; } }
+.player-col-title {
+  font-size: 13px; font-weight: 700; color: #fff;
+  background: linear-gradient(135deg, var(--deep-blue), var(--accent));
+  border-radius: 7px; padding: 7px 14px; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 6px;
+}
+.player-col-title i { color: var(--gold); }
+.player-col-title.partner { background: linear-gradient(135deg, #b5477a, #e07aaa); }
+.player-col-title.partner i { color: #fde8f3; }
+
+.reg-wrap { display: flex; align-items: center; gap: 6px; }
+.reg-sep { font-size: 20px; font-weight: 700; color: var(--gold); flex-shrink: 0; line-height: 1; }
+.reg-input {
+  background: #f9fafb; border: 1.5px solid var(--border); border-radius: 8px;
+  font-size: 16px; font-weight: 700; padding: 9px 12px; text-align: center; outline: none; font-family: inherit;
+}
+.reg-input:focus { border-color: var(--gold); background: #fff; box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+.reg-input::placeholder { color: #c8cdd8; opacity: 1; }
+.reg-input.err { border-color: var(--error) !important; }
+.reg-hint { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+.autofill-msg { display: none; font-size: 11.5px; color: var(--success); font-weight: 700; margin-top: 6px; align-items: center; gap: 4px; }
+.autofill-msg.show { display: flex; }
+.autofill-flash { animation: flashfill 1s ease; }
+@keyframes flashfill { 0% { background: #fff4d6; } 100% { background: #f9fafb; } }
+
+/* 住所欄 */
+.addr-cols { display: flex; gap: 14px; flex-wrap: wrap; }
+.addr-cols .form-group { max-width: 66%; flex: 1 1 66%; }
+@media (max-width: 560px) { .addr-cols .form-group { max-width: 100%; flex: 1 1 100%; } }
+#pref[readonly], #city[readonly] { -webkit-text-fill-color: #c8cdd8; color: #c8cdd8; opacity: 1; }
+.zip-row { display: flex; gap: 10px; align-items: flex-end; }
+.zip-row .form-group { max-width: 220px; }
+.btn-zip {
+  background: var(--navy); color: #fff; border: none; border-radius: 8px;
+  font-size: 13px; font-weight: 700; padding: 10.5px 18px; cursor: pointer; white-space: nowrap;
+}
+.btn-zip:hover { background: var(--accent); }
+.btn-zip:disabled { opacity: 0.6; cursor: default; }
+
+/* ===== 出場競技区分 ===== */
+.ev-col-header { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.ev-col-label {
+  background: linear-gradient(135deg, var(--deep-blue), var(--accent));
+  color: #fff; border-radius: 8px; padding: 10px 16px; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.ev-col-label i { color: var(--gold); }
+.ev-col-label.latin { background: linear-gradient(135deg, #c96090, #f0a8cc); }
+.ev-col-label.latin i { color: #fde8f3; }
+
+.events-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media (max-width: 560px) { .events-grid-2col { grid-template-columns: 1fr; } }
+
+.ev-card {
+  border: 2px solid var(--border); border-radius: 10px; padding: 12px 14px; cursor: pointer;
+  transition: 0.2s; background: #fff;
+}
+.ev-card.selected { border-color: var(--gold); background: #fdf9ef; }
+.ev-cb-wrap { display: flex; align-items: center; margin-bottom: 6px; }
+.ev-cb-wrap input[type=checkbox] { display: none; }
+.ev-cb-wrap label {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border: 2.5px solid var(--border); border-radius: 7px;
+  background: #fff; cursor: pointer; transition: 0.2s; margin: 0; flex-shrink: 0;
+}
+.ev-cb-wrap input[type=checkbox]:checked + label,
+.ev-card.selected .ev-cb-wrap label {
+  background: var(--gold); border-color: var(--gold); box-shadow: 0 2px 8px rgba(201,168,76,0.35);
+}
+.ev-cb-wrap input[type=checkbox]:checked + label::after,
+.ev-card.selected .ev-cb-wrap label::after {
+  content: ''; display: block; width: 9px; height: 15px;
+  border: 3px solid #fff; border-top: none; border-left: none;
+  transform: rotate(45deg) translate(-1px,-2px);
+}
+.ev-no { font-size: 15px; font-weight: 700; color: var(--text-muted); }
+.ev-grade { font-size: 14px; font-weight: 700; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 3px; }
+.ev-name { font-size: 16px; font-weight: 700; color: var(--text); }
+.ev-price { font-size: 15px; color: var(--gold); font-weight: 700; }
+
+.total-box {
+  background: linear-gradient(135deg, var(--deep-blue), var(--navy));
+  color: #fff; border-radius: 12px; padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between; margin-top: 4px;
+}
+.total-box .label { font-size: 13px; color: rgba(255,255,255,0.8); }
+.total-box .amount { font-size: 26px; font-weight: 900; color: var(--gold-light); }
+
+/* ===== 振込情報 ===== */
+.furikomi-fields {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 220px) minmax(0, 180px);
+  gap: 0 20px;
+  align-items: start;
+}
+@media (max-width: 540px) { .furikomi-fields { grid-template-columns: 1fr; } }
+
+/* ===== ボタン ===== */
+.btn-primary {
+  width: 100%; background: linear-gradient(135deg, var(--gold), #b8923a); color: #fff;
+  border: none; border-radius: 10px; padding: 15px; font-size: 15.5px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 6px 18px rgba(201,168,76,0.35);
+}
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-primary:disabled { opacity: 0.6; cursor: default; }
+.btn-outline {
+  width: 100%; background: #fff; color: var(--text-muted); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 13px; font-size: 14.5px; font-weight: 700; cursor: pointer; margin-bottom: 10px;
+}
+.btn-outline:hover { border-color: var(--navy); color: var(--navy); }
+
+/* ===== 確認画面 ===== */
+.confirm-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.confirm-table th, .confirm-table td { text-align: left; padding: 10px 4px; border-bottom: 1px solid #eef1f6; vertical-align: top; }
+.confirm-table th { width: 34%; color: var(--text-muted); font-weight: 700; }
+.confirm-table td { font-weight: 600; white-space: pre-line; }
+
+/* ===== 完了画面 ===== */
+.complete-icon {
+  width: 72px; height: 72px; border-radius: 50%; background: var(--success);
+  color: #fff; display: flex; align-items: center; justify-content: center; font-size: 32px;
+  margin: 0 auto 18px;
+}
+.complete-box { text-align: center; }
+.complete-box h2 { font-size: 20px; margin-bottom: 10px; }
+.complete-box p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 4px; }
+.furikomi-box { background: #f9fafb; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-top: 18px; text-align: left; font-size: 13px; }
+.furikomi-box b { color: var(--accent); }
+
+.attn-box { font-size: 12.5px; color: var(--text-muted); background: #fbfbfd; border: 1px dashed var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; }
+.attn-box li { margin-left: 18px; margin-bottom: 4px; }
+
+#confirmView, #completeView { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">JDC公認（№202629）</div>
+  <h1>2026 中部ダンスフェスティバル in 名古屋</h1>
+  <div class="sub">プロフェッショナル部門　出場申込フォーム</div>
+  <div class="meta">
+    <span><i class="fas fa-calendar-days"></i> 令和8年11月8日（日）14:00〜19:00（予定）</span>
+    <span><i class="fas fa-location-dot"></i> 邦和みなとスポーツ＆カルチャー（名古屋市港区港栄1-8-23）</span>
+  </div>
+  <div class="deadline"><i class="fas fa-hourglass-half"></i> 出場申込締切：令和8年10月9日（金）必着</div>
+</header>
+
+<div class="container">
+
+  <div class="step-bar">
+    <div class="step active" id="step1"><div class="dot">1</div>入力</div>
+    <div class="line"></div>
+    <div class="step" id="step2"><div class="dot">2</div>確認</div>
+    <div class="line"></div>
+    <div class="step" id="step3"><div class="dot">3</div>完了</div>
+  </div>
+
+  <div id="formView">
+
+    <div class="notice-box">
+      <b>お申込みについて：</b>本フォームでの送信はWeb受付です。出場料は郵便振替（口座番号 00830-5-88490／ゆうちょ銀行以外からは 〇八九店・当座 0088490）にて事前にお振込みの上、振込情報をご入力ください。出場資格はJDC登録選手及びその他のプロフェッショナル選手（JDCショーダンス規程に準ずる）です。
+    </div>
+
+    <div class="notice-box">
+      <b>登録番号について：</b>JDCプロフェッショナル登録番号をお持ちでない選手は、登録番号欄に「0-000」とご記入ください。
+    </div>
+
+    <!-- 選手情報 -->
+    <div class="card">
+      <div class="card-title"><i class="fas fa-user-group"></i> 選手情報</div>
+      <div class="player-grid">
+        <div>
+          <div class="player-col-title"><i class="fas fa-male"></i> リーダー</div>
+          <div class="form-group">
+            <label>JDCプロフェッショナル登録番号<span class="req">*</span></label>
+            <div class="reg-wrap">
+              <input type="text" id="regLeaderP1" class="reg-input" maxlength="1" placeholder="1"
+                     oninput="handleRegInput(this,'regLeaderP2'); lookupLeaderData();" inputmode="numeric" style="width:52px;">
+              <span class="reg-sep">-</span>
+              <input type="text" id="regLeaderP2" class="reg-input" maxlength="3" placeholder="234"
+                     oninput="handleRegInput(this,null); lookupLeaderData();" inputmode="numeric" style="width:72px;">
+            </div>
+            <div class="reg-hint">登録番号（1桁－3桁）を入力すると登録データを自動表示します</div>
+            <div class="err-msg" id="regLeader-err">登録番号は「1桁－3桁」の半角数字で入力してください</div>
+            <div class="autofill-msg" id="leader-autofill-msg"><i class="fas fa-circle-check"></i> 登録データを自動入力しました</div>
+          </div>
+          <div class="form-group">
+            <label>氏名（漢字）<span class="req">*</span></label>
+            <input type="text" id="leaderKanji" placeholder="例：山田 太郎">
+            <div class="err-msg" id="leaderKanji-err">氏名を入力してください</div>
+          </div>
+          <div class="form-group">
+            <label>ふりがな<span class="req">*</span></label>
+            <input type="text" id="leaderKana" placeholder="例：ﾔﾏﾀﾞ ﾀﾛｳ">
+            <div class="err-msg" id="leaderKana-err">ふりがなを入力してください</div>
+          </div>
+          <div class="form-group">
+            <label>所属教室<span class="opt">（任意）</span></label>
+            <input type="text" id="leaderSchool" placeholder="例：○○ダンス教室">
+          </div>
+        </div>
+        <div>
+          <div class="player-col-title partner"><i class="fas fa-female"></i> パートナー</div>
+          <div class="form-group">
+            <label>JDCプロフェッショナル登録番号<span class="req">*</span></label>
+            <div class="reg-wrap">
+              <input type="text" id="regPartnerP1" class="reg-input" maxlength="1" placeholder="1" oninput="handleRegInput(this,'regPartnerP2');" inputmode="numeric" style="width:52px;">
+              <span class="reg-sep">-</span>
+              <input type="text" id="regPartnerP2" class="reg-input" maxlength="3" placeholder="234" oninput="handleRegInput(this,null);" inputmode="numeric" style="width:72px;">
+            </div>
+            <div class="reg-hint">リーダー登録番号からペアが自動特定されると、こちらも自動入力されます</div>
+            <div class="err-msg" id="regPartner-err">登録番号は「1桁－3桁」の半角数字で入力してください</div>
+          </div>
+          <div class="form-group">
+            <label>氏名（漢字）<span class="req">*</span></label>
+            <input type="text" id="partnerKanji" placeholder="例：山田 花子">
+            <div class="err-msg" id="partnerKanji-err">氏名を入力してください</div>
+          </div>
+          <div class="form-group">
+            <label>ふりがな<span class="req">*</span></label>
+            <input type="text" id="partnerKana" placeholder="例：ﾔﾏﾀﾞ ﾊﾅｺ">
+            <div class="err-msg" id="partnerKana-err">ふりがなを入力してください</div>
+          </div>
+          <div class="form-group">
+            <label>所属教室<span class="opt">（任意）</span></label>
+            <input type="text" id="partnerSchool" placeholder="例：○○ダンス教室">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 住所・連絡先 -->
+    <div class="card">
+      <div class="card-title"><i class="fas fa-address-card"></i> 住所・連絡先</div>
+      <div class="zip-row">
+        <div class="form-group">
+          <label>郵便番号<span class="req">*</span></label>
+          <input type="text" id="zip" placeholder="1234567（ハイフンなし）" inputmode="numeric" style="max-width:220px;">
+          <div class="err-msg" id="zip-err">郵便番号は7桁で入力してください</div>
+        </div>
+        <button type="button" class="btn-zip" onclick="searchZip()"><i class="fas fa-magnifying-glass"></i> 住所検索</button>
+      </div>
+      <div class="addr-cols">
+        <div class="form-group">
+          <label>都道府県<span class="req">*</span></label>
+          <input type="text" id="pref" class="pref-input" placeholder="愛知県" readonly
+            style="background:#f9fafb;cursor:default;color:#c8cdd8;-webkit-text-fill-color:#c8cdd8;opacity:1;">
+          <div class="err-msg" id="pref-err">都道府県を入力してください</div>
+        </div>
+        <div class="form-group">
+          <label>市区町村</label>
+          <input type="text" id="city" class="city-input" placeholder="名古屋市千種区" readonly
+            style="background:#f9fafb;cursor:default;color:#c8cdd8;-webkit-text-fill-color:#c8cdd8;opacity:1;">
+        </div>
+        <div class="form-group">
+          <label>番地・建物名</label>
+          <input type="text" id="banchi" placeholder="例：1-30-2 ○○ビル201">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>電話番号<span class="req">*</span></label>
+        <input type="tel" id="phone" placeholder="09012345678（ハイフンなし）" style="max-width:260px;">
+        <div class="err-msg" id="phone-err">電話番号を入力してください</div>
+      </div>
+      <div class="form-group">
+        <label>メールアドレス<span class="req">*</span></label>
+        <input type="email" id="email" placeholder="example@mail.com" style="max-width:400px;">
+        <div class="err-msg" id="email-err">正しいメールアドレスを入力してください</div>
+      </div>
+    </div>
+
+    <!-- 出場競技区分 -->
+    <div class="card">
+      <div class="card-title"><i class="fas fa-trophy"></i> 出場競技区分（複数選択可）</div>
+      <div class="ev-col-header">
+        <div class="ev-col-label"><i class="fas fa-crown"></i> ボールルーム</div>
+        <div class="ev-col-label latin"><i class="fas fa-fire"></i> ラテンアメリカン</div>
+      </div>
+      <div class="events-grid-2col" id="evGrid-all"></div>
+      <div class="err-msg" id="events-err" style="margin-bottom:10px;">出場競技区分を1つ以上選択してください</div>
+      <div class="total-box">
+        <span class="label">合計出場料</span>
+        <span class="amount" id="totalAmount">¥0</span>
+      </div>
+    </div>
+
+    <!-- 振込情報 -->
+    <div class="card">
+      <div class="card-title"><i class="fas fa-calendar-check"></i> 振込情報</div>
+      <div class="furikomi-fields">
+        <div class="form-group">
+          <label>振込日<span class="req">*</span></label>
+          <input type="date" id="transferDate">
+          <div class="err-msg" id="transferDate-err">振込日を入力してください</div>
+        </div>
+        <div class="form-group">
+          <label>振込人名<span class="req">*</span></label>
+          <input type="text" id="transferName" placeholder="例：ヤマダ タロウ">
+          <div class="err-msg" id="transferName-err">振込人名を入力してください</div>
+        </div>
+        <div class="form-group">
+          <label>振込金額<span class="req">*</span></label>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:15px;font-weight:700;color:var(--gold);">¥</span>
+            <input type="text" id="transferAmount" placeholder="例：5000" inputmode="numeric" style="max-width:140px;">
+          </div>
+          <div class="err-msg" id="transferAmount-err">振込金額を入力してください</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attn-box">
+      <li>登録選手以外（他団体登録のプロフェッショナル選手）は出場料10,000円となります。</li>
+      <li>出場料は原則として返金できません。</li>
+      <li>締切（10/9）を過ぎてのお申込みは、遅延事務手数料（2,000円）を頂く場合があります。</li>
+      <li>服装は正装。女性用シューズは必ずヒールカバーを装着してください。</li>
+    </div>
+
+    <button class="btn-primary" onclick="goConfirm()"><i class="fas fa-arrow-right"></i> 確認画面へ</button>
+  </div>
+
+  <div id="confirmView">
+    <div class="card">
+      <div class="card-title"><i class="fas fa-clipboard-check"></i> 入力内容の確認</div>
+      <table class="confirm-table">
+        <tr><th>リーダー登録番号</th><td id="c-regLeader"></td></tr>
+        <tr><th>リーダー</th><td id="c-leaderName"></td></tr>
+        <tr><th>リーダー所属教室</th><td id="c-leaderSchool"></td></tr>
+        <tr><th>パートナー登録番号</th><td id="c-regPartner"></td></tr>
+        <tr><th>パートナー</th><td id="c-partnerName"></td></tr>
+        <tr><th>パートナー所属教室</th><td id="c-partnerSchool"></td></tr>
+        <tr><th>郵便番号</th><td id="c-zip"></td></tr>
+        <tr><th>住所</th><td id="c-address"></td></tr>
+        <tr><th>電話番号</th><td id="c-phone"></td></tr>
+        <tr><th>メールアドレス</th><td id="c-email"></td></tr>
+        <tr><th>出場競技区分</th><td id="c-events"></td></tr>
+        <tr><th>合計出場料</th><td id="c-total"></td></tr>
+        <tr><th>振込日</th><td id="c-transferDate"></td></tr>
+        <tr><th>振込人名</th><td id="c-transferName"></td></tr>
+        <tr><th>振込金額</th><td id="c-transferAmount"></td></tr>
+      </table>
+    </div>
+    <button class="btn-outline" onclick="goBack()"><i class="fas fa-arrow-left"></i> 入力画面へ戻る</button>
+    <button class="btn-primary" id="submitBtn" onclick="submitEntry()"><i class="fas fa-paper-plane"></i> この内容で申し込む</button>
+  </div>
+
+  <div id="completeView">
+    <div class="card complete-box">
+      <div class="complete-icon"><i class="fas fa-check"></i></div>
+      <h2>お申込みを受け付けました</h2>
+      <p>ご入力いただいたメールアドレス宛に確認メールをお送りしました。</p>
+      <p>当日は受付にて選手証をご確認いただきますので、余裕を持ってお越しください。</p>
+      <div class="furikomi-box">
+        <b>振込先（郵便振替）：</b> JDC中部総局競技部　口座番号 00830-5-88490<br>
+        <b>ゆうちょ銀行以外から振込の場合：</b> ゆうちょ銀行　〇八九店（ゼロハチキュウ店）　当座 0088490<br><br>
+        <b>お問い合わせ：</b> JDC中部総局事務局　TEL 052-745-2345（月・火・水 10:00〜16:00）／FAX 052-745-2346<br>
+        〒464-0858　名古屋市千種区千種1-30-2　古井ノ坂ビル201
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+emailjs.init('3A228NVyE5NVMxev8');
+
+/* ===== 大会情報 ===== */
+const EVENT_DATE = '令和8年11月8日（日）';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbygAVM_Dhc4DkL0QnP6obLnczi9LTL8wBuPPL2g_ZCcqVgVxUGlwUim8Lw1u8Rh6lAl/exec';
+
+const proData = {
+  ballroom: [
+    { id:'P1', no:1, grade:'デモンストレーション競技会', name:'ボールルーム', price:5000 },
+  ],
+  latin: [
+    { id:'P2', no:2, grade:'デモンストレーション競技会', name:'ラテンアメリカン', price:5000 },
+  ]
+};
+var selectedEvents = {};
+
+
+/* ===== 登録選手データ（Proエントリー用データ(260802祖父江先生).xlsx『pro_csv (8.3修正)』シートより自動生成） ===== */
+const proMembers = [
+{"regLeader": "3-529", "leaderKanji": "鮫口伸一郎", "leaderKana": "ｻﾒｸﾞﾁ ｼﾝｲﾁﾛｳ", "leaderSchool": "鮫口ダンス教室", "regPartner": "3-529", "partnerKanji": "阿部里香子", "partnerKana": "ｱﾍﾞ ﾘｶｺ", "partnerSchool": "鮫口ダンス教室", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "3-566", "leaderKanji": "小野 孝明", "leaderKana": "ｵﾉ ｺｳﾒｲ", "leaderSchool": "小野孝明ダンススクール", "regPartner": "3-566", "partnerKanji": "小野恵美織", "partnerKana": "ｵﾉ ｴﾐﾘ", "partnerSchool": "小野孝明ダンススクール", "gradeM": "Ｂ", "gradeL": "Ａ"},
+{"regLeader": "3-569", "leaderKanji": "田原 健二", "leaderKana": "ﾀﾊﾗ ｹﾝｼﾞ", "leaderSchool": "タハラダンススタジオ", "regPartner": "3-569", "partnerKanji": "上脇友季湖", "partnerKana": "ｶﾐﾜｷ ﾕｷｺ", "partnerSchool": "ダンス大塚会館", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-624", "leaderKanji": "丁野 真一", "leaderKana": "ﾁｮｳﾉ ｼﾝｲﾁ", "leaderSchool": "シライシダンススタジオ", "regPartner": "3-624", "partnerKanji": "井上 望", "partnerKana": "ｲﾉｳｴ ﾉｿﾞﾐ", "partnerSchool": "シライシダンススタジオ", "gradeM": "Ｂ", "gradeL": "Ａ"},
+{"regLeader": "3-659", "leaderKanji": "内藤 達矢", "leaderKana": "ﾅｲﾄｳ ﾀﾂﾔ", "leaderSchool": "山田誠ダンススタジオ", "regPartner": "3-659", "partnerKanji": "手島 紫乃", "partnerKana": "ﾃｼﾏ ｼﾉ", "partnerSchool": "山田誠ダンススタジオ", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-671", "leaderKanji": "西尾 浩一", "leaderKana": "ﾆｼｵ ｺｳｲﾁ", "leaderSchool": "武田ダンススクール", "regPartner": "3-671", "partnerKanji": "下田 藍", "partnerKana": "ｼﾓﾀﾞ ｱｲ", "partnerSchool": "武田ダンススクール", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-734", "leaderKanji": "永田 薫", "leaderKana": "ﾅｶﾞﾀ ｶｵﾙ", "leaderSchool": "小林ダンススクール", "regPartner": "3-734", "partnerKanji": "飯野さやか", "partnerKana": "ｲｲﾉ ｻﾔｶ", "partnerSchool": "小林ダンススクール", "gradeM": "Ａ", "gradeL": "Ａ"},
+{"regLeader": "3-740", "leaderKanji": "亀川 隆史", "leaderKana": "ｶﾒｶﾞﾜ ﾀｶﾌﾐ", "leaderSchool": "J DANCERS LABO", "regPartner": "3-740", "partnerKanji": "新保 伊央", "partnerKana": "ｼﾝﾎﾟ ｲｵ", "partnerSchool": "J DANCERS LABO", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-749", "leaderKanji": "松岡 佑紀", "leaderKana": "ﾏﾂｵｶ ﾕｳｷ", "leaderSchool": "MATSUOKA DANCE PRODUCTION", "regPartner": "3-749", "partnerKanji": "齊藤ひかる", "partnerKana": "ｻｲﾄｳ ﾋｶﾙ", "partnerSchool": "MATSUOKA DANCE PRODUCTION", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "3-762", "leaderKanji": "斉藤 達哉", "leaderKana": "ｻｲﾄｳ ﾀﾂﾔ", "leaderSchool": "武田ダンススクール", "regPartner": "3-762", "partnerKanji": "八木恵里香", "partnerKana": "ﾔｷﾞ ｴﾘｶ", "partnerSchool": "武田ダンススクール", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-764", "leaderKanji": "田中 孝康", "leaderKana": "ﾀﾅｶ ﾉﾘﾔｽ", "leaderSchool": "チョイスダンススタジオ", "regPartner": "3-764", "partnerKanji": "加藤美智子", "partnerKana": "ｶﾄｳ ﾐﾁｺ", "partnerSchool": "チョイスダンススタジオ", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-796", "leaderKanji": "原 辰瑠", "leaderKana": "ﾊﾗ ﾀﾂﾙ", "leaderSchool": "タハラダンススタジオ", "regPartner": "3-796", "partnerKanji": "井上 愛香", "partnerKana": "ｲﾉｳｴ ｱｲｶ", "partnerSchool": "Y&Mダンスラボ．", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-813", "leaderKanji": "畠山 貴弘", "leaderKana": "ﾊﾀｹﾔﾏ ﾀｶﾋﾛ", "leaderSchool": "小浜ダンスプラザ", "regPartner": "3-813", "partnerKanji": "高橋 美樹", "partnerKana": "ﾀｶﾊｼ ﾐｷ", "partnerSchool": "小浜ダンスプラザ", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-827", "leaderKanji": "箱田翔次郎", "leaderKana": "ﾊｺﾀﾞ ｼｮｳｼﾞﾛｳ", "leaderSchool": "日暮里ニシダダンススクール", "regPartner": "3-827", "partnerKanji": "田原麻吏可", "partnerKana": "ﾀﾊﾗ ﾏﾘｶ", "partnerSchool": "日暮里ニシダダンススクール", "gradeM": "", "gradeL": "Ａ"},
+{"regLeader": "3-830", "leaderKanji": "奥野 貴", "leaderKana": "ｵｸﾉ ﾀｶﾔ", "leaderSchool": "チョイスダンススタジオ", "regPartner": "3-830", "partnerKanji": "石井 沙耶", "partnerKana": "ｲｼｲ ｻﾔ", "partnerSchool": "チョイスダンススタジオ", "gradeM": "", "gradeL": "Ａ"},
+{"regLeader": "3-833", "leaderKanji": "寺門 駿", "leaderKana": "ﾃﾗｶﾄﾞ ｼｭﾝ", "leaderSchool": "KM Dance Arts", "regPartner": "3-833", "partnerKanji": "寺門 彩香", "partnerKana": "ﾃﾗｶﾄﾞ ｱﾔｶ", "partnerSchool": "KM Dance Arts", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-841", "leaderKanji": "森安 略夫", "leaderKana": "ﾓﾘﾔｽ ﾉﾘｵ", "leaderSchool": "ASダンススタジオ", "regPartner": "3-841", "partnerKanji": "竹澤 陽子", "partnerKana": "ﾀｹｻﾞﾜ ﾖｳｺ", "partnerSchool": "ASダンススタジオ", "gradeM": "Ｂ", "gradeL": ""},
+{"regLeader": "3-844", "leaderKanji": "浜崎 裕章", "leaderKana": "ﾊﾏｻｷ ﾋﾛﾌﾐ", "leaderSchool": "チョイス＆双葉会ダンススタジオ", "regPartner": "3-844", "partnerKanji": "川澄　清香", "partnerKana": "ｶﾜｽﾐ ｻﾔｶ", "partnerSchool": "Dance Space SAKAE", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-854", "leaderKanji": "宮原明希光", "leaderKana": "ﾐﾔﾊﾗ ｱｷﾐﾂ", "leaderSchool": "Studio Li", "regPartner": "3-854", "partnerKanji": "松下 梨沙", "partnerKana": "ﾏﾂｼﾀ ﾘｻ", "partnerSchool": "Studio Li", "gradeM": "Ｂ", "gradeL": ""},
+{"regLeader": "3-861", "leaderKanji": "滝澤 聖也", "leaderKana": "ﾀｷｻﾞﾜ ｾｲﾔ", "leaderSchool": "ダンススタジオコネクト橘", "regPartner": "3-861", "partnerKanji": "前田 馨", "partnerKana": "ﾏｴﾀﾞ ｶｵﾙ", "partnerSchool": "TDSサード・ダンススクール", "gradeM": "Ｂ", "gradeL": ""},
+{"regLeader": "3-862", "leaderKanji": "石川 敬之", "leaderKana": "ｲｼｶﾜ ﾉﾘﾕｷ", "leaderSchool": "ﾁｮｲｽ＆双葉会ダンススタジオ", "regPartner": "3-862", "partnerKanji": "奥 恵弥", "partnerKana": "ｵｸ ｱﾔ", "partnerSchool": "ﾁｮｲｽ＆双葉会ダンススタジオ", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "3-869", "leaderKanji": "田中慎一朗", "leaderKana": "ﾀﾅｶ ｼﾝｲﾁﾛｳ", "leaderSchool": "Fontana Dance Studio", "regPartner": "3-869", "partnerKanji": "田中 あや", "partnerKana": "ﾀﾅｶ ｱﾔ", "partnerSchool": "Fontana Dance Studio", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "3-870", "leaderKanji": "東海林祐介", "leaderKana": "ﾄｳｶｲﾘﾝ ﾕｳｽｹ", "leaderSchool": "Tomorrow  Dance Club", "regPartner": "3-870", "partnerKanji": "立花 悠", "partnerKana": "ﾀﾁﾊﾞﾅ ﾊﾙｶ", "partnerSchool": "Tomorrow  Dance Club", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "3-871", "leaderKanji": "工藤 正俊", "leaderKana": "ｸﾄﾞｳ ﾏｻﾄｼ", "leaderSchool": "KM Dance Arts", "regPartner": "3-871", "partnerKanji": "李 夢希", "partnerKana": "ﾘ ﾑｷ", "partnerSchool": "KM Dance Arts", "gradeM": "Ｃ", "gradeL": ""},
+{"regLeader": "3-873", "leaderKanji": "中野 颯斗", "leaderKana": "ﾅｶﾉ ﾊﾔﾄ", "leaderSchool": "チョイス＆双葉会ダンススタジオ", "regPartner": "3-873", "partnerKanji": "DAGA", "partnerKana": "ﾀﾞｶﾞ", "partnerSchool": "チョイス＆双葉会ダンススタジオ", "gradeM": "", "gradeL": ""},
+{"regLeader": "4-120", "leaderKanji": "", "leaderKana": "", "leaderSchool": "", "regPartner": "4-120", "partnerKanji": "佐野 和美", "partnerKana": "ｻﾉ  ｶｽﾞﾐ", "partnerSchool": "", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "4-150", "leaderKanji": "阪野 清人", "leaderKana": "ﾊﾞﾝﾉ ｷﾖﾄ", "leaderSchool": "バンノダンススタジオ", "regPartner": "4-150", "partnerKanji": "阪野 綾", "partnerKana": "ﾊﾞﾝﾉ ｱﾔ", "partnerSchool": "バンノダンススタジオ", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "4-193", "leaderKanji": "柴田 真希", "leaderKana": "ｼﾊﾞﾀ ﾏｻｷ", "leaderSchool": "ナゴヤダンスアカデミー", "regPartner": "4-193", "partnerKanji": "柴田 綾子", "partnerKana": "ｼﾊﾞﾀ ｱﾔｺ", "partnerSchool": "ナゴヤダンスアカデミー", "gradeM": "Ａ", "gradeL": "Ｄ"},
+{"regLeader": "4-206", "leaderKanji": "伊藤 圭一", "leaderKana": "ｲﾄｳ ｹｲｲﾁ", "leaderSchool": "ﾘﾌﾚｯｼｭﾀﾞﾝｽｽﾀｼﾞｵ ﾐｴ", "regPartner": "4-206", "partnerKanji": "廣瀬 久美", "partnerKana": "ﾋﾛｾ ｸﾐ", "partnerSchool": "ﾘﾌﾚｯｼｭﾀﾞﾝｽｽﾀｼﾞｵ ﾐｴ", "gradeM": "Ｄ", "gradeL": ""},
+{"regLeader": "4-223", "leaderKanji": "安藤 裕一", "leaderKana": "ｱﾝﾄﾞｳ ﾕｳｲﾁ", "leaderSchool": "カワチダンススタジオ", "regPartner": "4-223", "partnerKanji": "河内 芳江", "partnerKana": "ｶﾜﾁ ﾖｼｴ", "partnerSchool": "カワチダンススタジオ", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "4-233", "leaderKanji": "新海 晋也", "leaderKana": "ｼﾝｶｲ ｼﾝﾔ", "leaderSchool": "新海ダンススタジオ", "regPartner": "4-233", "partnerKanji": "新海きみ子", "partnerKana": "ｼﾝｶｲ ｷﾐｺ", "partnerSchool": "新海ダンススタジオ", "gradeM": "Ｂ", "gradeL": ""},
+{"regLeader": "4-240", "leaderKanji": "野田 幹也", "leaderKana": "ﾉﾀﾞ ﾐｷﾔ", "leaderSchool": "ナゴヤダンスアカデミー", "regPartner": "4-240", "partnerKanji": "広瀬 真名", "partnerKana": "ﾋﾛｾ ﾏﾅ", "partnerSchool": "ナゴヤダンスアカデミー", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "4-247", "leaderKanji": "永田　勝規", "leaderKana": "ﾅｶﾞﾀ ｶﾂﾉﾘ", "leaderSchool": "永田勝規ダンススタジオ", "regPartner": "4-247", "partnerKanji": "八幡　さやか", "partnerKana": "ﾔﾊﾀ ｻﾔｶ", "partnerSchool": "永田勝規ダンススタジオ", "gradeM": "", "gradeL": ""},
+{"regLeader": "4-258", "leaderKanji": "中野 雅章", "leaderKana": "ﾅｶﾉ ﾏｻｱｷ", "leaderSchool": "中野まさあきダンススタジオ", "regPartner": "4-258", "partnerKanji": "中野由美恵", "partnerKana": "ﾅｶﾉ ﾕﾐｴ", "partnerSchool": "中野まさあきダンススタジオ", "gradeM": "Ａ", "gradeL": "Ｄ"},
+{"regLeader": "4-260", "leaderKanji": "村上 知哉", "leaderKana": "ﾑﾗｶﾐ ﾄﾓﾔ", "leaderSchool": "サワダマサヒロダンススタジオ", "regPartner": "4-260", "partnerKanji": "村田 佳澄", "partnerKana": "ﾑﾗﾀ ｶｽﾐ", "partnerSchool": "サワダマサヒロダンススタジオ", "gradeM": "Ｄ", "gradeL": "Ａ"},
+{"regLeader": "4-262", "leaderKanji": "勝川 佳和", "leaderKana": "ｶﾂｶﾜ ﾖｼｶｽﾞ", "leaderSchool": "バンノダンススタジオ", "regPartner": "4-262", "partnerKanji": "清水佳奈子", "partnerKana": "ｼﾐｽﾞ ｶﾅｺ", "partnerSchool": "オザキダンススタジオ", "gradeM": "Ｂ", "gradeL": "Ａ"},
+{"regLeader": "4-265", "leaderKanji": "瀬内　孝幸", "leaderKana": "ｾｳﾁ ﾀｶﾕｷ", "leaderSchool": "セウチダンススクール", "regPartner": "", "partnerKanji": "", "partnerKana": "", "partnerSchool": "", "gradeM": "", "gradeL": ""},
+{"regLeader": "4-269", "leaderKanji": "倉島　良悟", "leaderKana": "ｸﾗｼﾏ ﾘｮｳｺﾞ", "leaderSchool": "Ｋ'Dance House", "regPartner": "4-269", "partnerKanji": "國本　麻衣", "partnerKana": "ｸﾆﾓﾄ ﾏｲ", "partnerSchool": "Ｋ'Dance House", "gradeM": "", "gradeL": ""},
+{"regLeader": "4-270", "leaderKanji": "竹内 大祐", "leaderKana": "ﾀｹｳﾁ ﾀﾞｲｽｹ", "leaderSchool": "Dance＆Motion TAKEUCHI", "regPartner": "4-270", "partnerKanji": "竹内 桃子", "partnerKana": "ﾀｹｳﾁ ﾓﾓｺ", "partnerSchool": "Dance＆Motion TAKEUCHI", "gradeM": "Ａ", "gradeL": "Ｎ"},
+{"regLeader": "4-271", "leaderKanji": "稲垣　利和", "leaderKana": "ｲﾅｶﾞｷ ﾄｼｶｽﾞ", "leaderSchool": "セウチダンススクール", "regPartner": "", "partnerKanji": "", "partnerKana": "", "partnerSchool": "", "gradeM": "", "gradeL": ""},
+{"regLeader": "4-273", "leaderKanji": "勝野 出", "leaderKana": "ｶﾂﾉ ｲﾂﾞﾙ", "leaderSchool": "DANCE FUSION", "regPartner": "4-273", "partnerKanji": "浅海 愛", "partnerKana": "ｱｻｳﾐ ｱｲ", "partnerSchool": "DANCE FUSION", "gradeM": "Ｂ", "gradeL": "Ａ"},
+{"regLeader": "4-276", "leaderKanji": "村澤 俊也", "leaderKana": "ﾑﾗｻﾜ ｼｭﾝﾔ", "leaderSchool": "梅原ダンススクール", "regPartner": "4-276", "partnerKanji": "鈴木 伶奈", "partnerKana": "ｽｽﾞｷ ﾚﾅ", "partnerSchool": "梅原ダンススクール", "gradeM": "Ａ", "gradeL": "Ｂ"},
+{"regLeader": "4-277", "leaderKanji": "金原 亮司", "leaderKana": "ｷﾝﾊﾟﾗ ﾘｮｳｼﾞ", "leaderSchool": "小西雅司ダンススタジオ", "regPartner": "4-277", "partnerKanji": "永原 由貴", "partnerKana": "ﾅｶﾞﾊﾗ ﾕｷ", "partnerSchool": "小西雅司ダンススタジオ", "gradeM": "Ｎ", "gradeL": "Ａ"},
+{"regLeader": "4-279", "leaderKanji": "柴山 和樹", "leaderKana": "ｼﾊﾞﾔﾏ ｶｽﾞｷ", "leaderSchool": "DANCE STUDIO B&G", "regPartner": "4-279", "partnerKanji": "平岩 英里", "partnerKana": "ﾋﾗｲﾜ ｴﾘ", "partnerSchool": "DANCE STUDIO B&G", "gradeM": "Ａ", "gradeL": "Ｎ"},
+{"regLeader": "4-283", "leaderKanji": "新美 一輝", "leaderKana": "ﾆｲﾐ ｶｽﾞｷ", "leaderSchool": "サトウダンススクール", "regPartner": "4-283", "partnerKanji": "山口ひかり", "partnerKana": "ﾔﾅｸﾞﾁ ﾋｶﾘ", "partnerSchool": "サトウダンススクール", "gradeM": "Ｂ", "gradeL": ""},
+{"regLeader": "4-286", "leaderKanji": "岡 俊宏", "leaderKana": "ｵｶ ﾄｼﾋﾛ", "leaderSchool": "DANCE FUSION", "regPartner": "4-286", "partnerKanji": "岡 瑞紀", "partnerKana": "ｵｶ ﾐｽﾞｷ", "partnerSchool": "DANCE FUSION", "gradeM": "Ａ", "gradeL": "Ａ"},
+{"regLeader": "4-289", "leaderKanji": "松永 卓也", "leaderKana": "ﾏﾂﾅｶﾞ ﾀｸﾔ", "leaderSchool": "新海ダンススタジオ", "regPartner": "4-289", "partnerKanji": "松永由莉枝", "partnerKana": "ﾏﾂﾅｶﾞ ﾕﾘｴ", "partnerSchool": "新海ダンススタジオ", "gradeM": "Ｄ", "gradeL": "Ａ"},
+{"regLeader": "4-290", "leaderKanji": "太田 雅士", "leaderKana": "ｵｵﾀ ﾏｻｼ", "leaderSchool": "ニシダダンススタジオ", "regPartner": "4-290", "partnerKanji": "太田　薫", "partnerKana": "", "partnerSchool": "ニシダダンススタジオ", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "4-291", "leaderKanji": "岩本 憲幸", "leaderKana": "ｲﾜﾓﾄ ﾉﾘﾕｷ", "leaderSchool": "ナゴヤダンスアカデミー", "regPartner": "4-291", "partnerKanji": "稲垣 はる美", "partnerKana": "ｲﾅｶﾞｷ ﾊﾙﾐ", "partnerSchool": "ナゴヤダンスアカデミー", "gradeM": "Ａ", "gradeL": "Ａ"},
+{"regLeader": "4-292", "leaderKanji": "小森 康裕", "leaderKana": "ｺﾓﾘ ﾔｽﾋﾛ", "leaderSchool": "サトウダンススクール", "regPartner": "4-292", "partnerKanji": "滝川 和美", "partnerKana": "ﾀｷｶﾜ ｶｽﾞﾐ", "partnerSchool": "サトウダンススクール", "gradeM": "", "gradeL": "Ｃ"},
+{"regLeader": "4-293", "leaderKanji": "新江　克之", "leaderKana": "ｼﾝｴ ｶﾂﾕｷ", "leaderSchool": "あけぼのダンス教室", "regPartner": "4-293", "partnerKanji": "新江　綾", "partnerKana": "ｼﾝｴ ｱﾔ", "partnerSchool": "あけぼのダンス教室", "gradeM": "", "gradeL": ""},
+{"regLeader": "4-297", "leaderKanji": "森川 真", "leaderKana": "ﾓﾘｶﾜ ﾏｺﾄ", "leaderSchool": "サワダマサヒロダンススタジオ", "regPartner": "4-297", "partnerKanji": "倉岡 美生", "partnerKana": "ｸﾗｵｶ ﾐｳ", "partnerSchool": "サワダマサヒロダンススタジオ", "gradeM": "Ｄ", "gradeL": "Ａ"},
+{"regLeader": "4-300", "leaderKanji": "森田 貴久", "leaderKana": "ﾓﾘﾀ ﾀｶﾋｻ", "leaderSchool": "アカデミー オブ ダンス.ヨコタ", "regPartner": "4-300", "partnerKanji": "木全 志穂", "partnerKana": "ｷﾏﾀ ｼﾎ", "partnerSchool": "アカデミー オブ ダンス.ヨコタ", "gradeM": "Ｄ", "gradeL": ""},
+{"regLeader": "4-302", "leaderKanji": "岩田 健司", "leaderKana": "ｲﾜﾀ ｹﾝｼﾞ", "leaderSchool": "岩田健司ダンススタジオ健司", "regPartner": "4-302", "partnerKanji": "寺島 裕希", "partnerKana": "ﾃﾗｼﾏ ﾕｳｷ", "partnerSchool": "小西雅司ダンススタジオ", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "4-303", "leaderKanji": "山﨑 雅則", "leaderKana": "ﾔﾏｻﾞｷ ﾏｻﾉﾘ", "leaderSchool": "カワチダンススタジオ", "regPartner": "4-303", "partnerKanji": "河内 知子", "partnerKana": "ｶﾜﾁ ﾄﾓｺ", "partnerSchool": "カワチダンススタジオ", "gradeM": "Ｂ", "gradeL": "Ａ"},
+{"regLeader": "4-305", "leaderKanji": "楠本 和嵩", "leaderKana": "ｸｽﾓﾄ ｶｽﾞﾀｶ", "leaderSchool": "中川雄太ダンスアカデミー", "regPartner": "4-305", "partnerKanji": "加納　杏那", "partnerKana": "ｶﾉｳ ｱﾝﾅ", "partnerSchool": "バンノダンススタジオ", "gradeM": "Ｃ", "gradeL": ""},
+{"regLeader": "4-306", "leaderKanji": "平柳 諒悟", "leaderKana": "ﾋﾗﾔﾅｷﾞ ﾘｮｳｺﾞ", "leaderSchool": "小西雅司ダンススタジオ", "regPartner": "4-306", "partnerKanji": "佐田みづほ", "partnerKana": "ｻﾀﾞ ﾐﾂﾞﾎ", "partnerSchool": "小西雅司ダンススタジオ", "gradeM": "", "gradeL": "A"},
+{"regLeader": "5-300", "leaderKanji": "伊藤 大輔", "leaderKana": "ｲﾄｳ ﾀﾞｲｽｹ", "leaderSchool": "ダンススクールD&M", "regPartner": "5-300", "partnerKanji": "伴 まゆみ", "partnerKana": "ﾊﾞﾝ ﾏﾕﾐ", "partnerSchool": "ダンススクールD&M", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "5-394", "leaderKanji": "中田 裕也", "leaderKana": "ﾅｶﾀ ﾕｳﾔ", "leaderSchool": "Ｏ&Ｎダンスカンパニー", "regPartner": "5-394", "partnerKanji": "佐々木真那", "partnerKana": "ｻｻｷ ﾏﾅ", "partnerSchool": "Ｏ&Ｎダンスカンパニー", "gradeM": "Ａ", "gradeL": "Ａ"},
+{"regLeader": "5-396", "leaderKanji": "下田 陸斗", "leaderKana": "ｼﾓﾀﾞ ﾘｸﾄ", "leaderSchool": "Ｏ＆Ｎダンスカンパニー", "regPartner": "5-396", "partnerKanji": "板谷 明穂", "partnerKana": "ｲﾀﾀﾆ ｱｷﾎ", "partnerSchool": "Dance Moment KANEKO", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "5-397", "leaderKanji": "渡辺 幸司", "leaderKana": "ﾜﾀﾅﾍﾞ ｺｳｼﾞ", "leaderSchool": "cityダンススクール", "regPartner": "5-397", "partnerKanji": "市川 由佳", "partnerKana": "ｲﾁｶﾜ ﾕｶ", "partnerSchool": "cityダンススクール", "gradeM": "Ｃ", "gradeL": ""},
+{"regLeader": "6-100", "leaderKanji": "中嶋 康人", "leaderKana": "ﾅｶｼﾏ ﾔｽﾄ", "leaderSchool": "ダンススタジオ中嶋", "regPartner": "6-100", "partnerKanji": "中嶋 藍香", "partnerKana": "ﾅｶｼﾏ ｱｲｶ", "partnerSchool": "ダンススタジオ中嶋", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "6-148", "leaderKanji": "平崎 誠", "leaderKana": "ﾋﾗｻｷ ﾏｺﾄ", "leaderSchool": "Tokyo渋谷ダンサーズ学院", "regPartner": "6-148", "partnerKanji": "切手利江子", "partnerKana": "ｷｯﾃ ﾘｴｺ", "partnerSchool": "Tokyo渋谷ダンサーズ学院", "gradeM": "Ｃ", "gradeL": "Ａ"},
+{"regLeader": "6-228", "leaderKanji": "岸本 真臣", "leaderKana": "ｷｼﾓﾄ ﾏｻｵﾐ", "leaderSchool": "キシモトダンスアカデミー", "regPartner": "6-228", "partnerKanji": "大津谷陽子", "partnerKana": "ｵｵﾂﾀﾆ ﾖｳｺ", "partnerSchool": "キシモトダンスアカデミー", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "6-255", "leaderKanji": "高野 智弥", "leaderKana": "ﾀｶﾉ ﾄﾓﾔ", "leaderSchool": "DANCE TEAM YOKO", "regPartner": "6-255", "partnerKanji": "加藤 七海", "partnerKana": "ｶﾄｳ ﾅﾅﾐ", "partnerSchool": "DANCE TEAM YOKO", "gradeM": "Ａ", "gradeL": ""},
+{"regLeader": "X-299", "leaderKanji": "井上 拓也", "leaderKana": "ｲﾉｳｴ ﾀｸﾔ", "leaderSchool": "Y&M DANCE LAB.", "regPartner": "X-299", "partnerKanji": "Nancy Zhang", "partnerKana": "ﾅﾝｼｰ ﾂｧﾝ", "partnerSchool": "Y&M DANCE LAB.", "gradeM": "Ａ", "gradeL": ""},
+];
+
+/* ===== 登録番号入力補助 ===== */
+function handleRegInput(el, nextId) {
+  el.value = el.value
+    .replace(/[０-９]/g, function(s) { return String.fromCharCode(s.charCodeAt(0) - 0xFEE0); })
+    .replace(/[^0-9]/g, '');
+  if (nextId && el.value.length === parseInt(el.maxLength))
+    document.getElementById(nextId).focus();
+}
+
+function getRegNo(p1Id, p2Id) {
+  var p1 = document.getElementById(p1Id).value.trim();
+  var p2 = document.getElementById(p2Id).value.trim();
+  if (!p1 && !p2) return '未記入';
+  if (p1 && p2)   return p1 + '-' + p2;
+  return (p1 || '') + (p2 || '');
+}
+
+/* ===== リーダー登録番号オートフィル ===== */
+var AUTOFILL_FIELDS = ['leaderKana','leaderKanji','leaderSchool','partnerKana','partnerKanji','partnerSchool'];
+
+function clearAutofillData() {
+  AUTOFILL_FIELDS.forEach(function(id) {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('regPartnerP1').value = '';
+  document.getElementById('regPartnerP2').value = '';
+  var msgEl = document.getElementById('leader-autofill-msg');
+  if (msgEl) msgEl.classList.remove('show');
+}
+
+function lookupLeaderData() {
+  var p1 = document.getElementById('regLeaderP1').value.trim();
+  var p2 = document.getElementById('regLeaderP2').value.trim();
+
+  if (p1.length !== 1 || p2.length !== 3) {
+    clearAutofillData();
+    return;
+  }
+
+  var key = p1 + '-' + p2;
+  var found = proMembers.find(function(m) { return m.regLeader === key; });
+  var msgEl = document.getElementById('leader-autofill-msg');
+
+  if (!found) { clearAutofillData(); return; }
+
+  function fill(id, val) {
+    var el = document.getElementById(id);
+    el.value = val || '';
+    el.classList.add('autofill-flash');
+    setTimeout(function() { el.classList.remove('autofill-flash'); }, 1000);
+  }
+
+  fill('leaderKana', found.leaderKana);
+  fill('leaderKanji', found.leaderKanji);
+  fill('leaderSchool', found.leaderSchool);
+  fill('partnerKana', found.partnerKana);
+  fill('partnerKanji', found.partnerKanji);
+  fill('partnerSchool', found.partnerSchool);
+
+  var pp1 = document.getElementById('regPartnerP1');
+  var pp2 = document.getElementById('regPartnerP2');
+  if (found.regPartner) {
+    var parts = found.regPartner.split('-');
+    if (parts.length === 2 && /^[0-9]$/.test(parts[0]) && /^[0-9]{1,3}$/.test(parts[1])) {
+      pp1.value = parts[0];
+      pp2.value = parts[1];
+    } else {
+      pp1.value = '';
+      pp2.value = '';
+    }
+  } else {
+    pp1.value = '';
+    pp2.value = '';
+  }
+  msgEl.classList.add('show');
+}
+
+/* ===== 住所検索（3段階フォールバック） ===== */
+async function searchZip() {
+  var zip = document.getElementById('zip').value.replace(/[^0-9]/g, '');
+  if (zip.length !== 7) { showErr('zip-err', true); return; }
+  showErr('zip-err', false);
+  var btn = document.querySelector('.btn-zip');
+  var orig = btn.innerHTML;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 検索中...';
+  btn.disabled = true;
+
+  function applyFilledStyle() {
+    ['pref','city'].forEach(function(id) {
+      var el = document.getElementById(id);
+      el.style.cssText = 'background:#f0f4ff;color:#1a1a2e;-webkit-text-fill-color:#1a1a2e;opacity:1;cursor:default;';
+    });
+  }
+
+  try {
+    var r = await fetch('https://zipcloud.ibsnet.co.jp/api/search?zipcode=' + zip);
+    if (r.ok) { var d = await r.json(); if (d.results && d.results[0]) {
+      document.getElementById('pref').value = d.results[0].address1;
+      document.getElementById('city').value = d.results[0].address2 + d.results[0].address3;
+      applyFilledStyle();
+      btn.innerHTML = orig; btn.disabled = false; return;
+    }}
+  } catch(_) {}
+
+  try {
+    var r2 = await fetch('https://postcode.teraren.com/postcodes/' + zip + '.json');
+    if (r2.ok) { var d2 = await r2.json();
+      document.getElementById('pref').value = d2.prefecture || '';
+      document.getElementById('city').value = (d2.city || '') + (d2.suburb || '');
+      applyFilledStyle();
+      btn.innerHTML = orig; btn.disabled = false; return;
+    }
+  } catch(_) {}
+
+  try {
+    var r3 = await fetch('https://madeinkobe.s3.ap-northeast-1.amazonaws.com/zipcode/'
+      + zip.slice(0,3) + '/' + zip + '.json');
+    if (r3.ok) { var d3 = await r3.json(); if (Array.isArray(d3) && d3[0]) {
+      document.getElementById('pref').value = d3[0].pref || '';
+      document.getElementById('city').value = (d3[0].city || '') + (d3[0].town || '');
+      applyFilledStyle();
+      btn.innerHTML = orig; btn.disabled = false; return;
+    }}
+  } catch(_) {}
+
+  btn.innerHTML = orig; btn.disabled = false;
+  ['pref','city'].forEach(function(id) {
+    var el = document.getElementById(id);
+    el.removeAttribute('readonly');
+    el.style.cssText = 'background:#fff;cursor:text;color:#1a1a2e;-webkit-text-fill-color:#1a1a2e;opacity:1;';
+  });
+  document.getElementById('pref').placeholder = '例：愛知県（直接入力してください）';
+  document.getElementById('city').placeholder  = '例：名古屋市港区（直接入力してください）';
+  document.getElementById('pref').focus();
+  alert('自動検索ができませんでした。\n都道府県・市区町村を直接入力してください。');
+}
+
+/* ===== 競技カード生成 ===== */
+function buildEvCards() {
+  var allEv = proData.ballroom.concat(proData.latin);
+  allEv.sort(function(a, b) { return a.no - b.no; });
+  var odd  = allEv.filter(function(ev) { return ev.no % 2 === 1; });
+  var even = allEv.filter(function(ev) { return ev.no % 2 === 0; });
+  var maxLen = Math.max(odd.length, even.length);
+  var ordered = [];
+  for (var i = 0; i < maxLen; i++) {
+    if (odd[i])  ordered.push(odd[i]);
+    if (even[i]) ordered.push(even[i]);
+  }
+  var grid = document.getElementById('evGrid-all');
+  ordered.forEach(function(ev) {
+    var d = document.createElement('div');
+    d.className = 'ev-card';
+    d.id = 'ev-' + ev.id;
+    var cbId = 'cb-' + ev.id;
+    var badgeStyle = ev.no % 2 === 1
+      ? 'background:rgba(46,74,158,.10);color:var(--accent);'
+      : 'background:rgba(201,168,76,.15);color:#8a6a10;';
+    d.innerHTML =
+      '<div class="ev-cb-wrap">' +
+        '<input type="checkbox" id="' + cbId + '">' +
+        '<label for="' + cbId + '"></label>' +
+      '</div>' +
+      '<div class="ev-no">【No.' + ev.no + '】</div>' +
+      '<div class="ev-grade" style="' + badgeStyle + '">' + ev.grade + '</div>' +
+      '<div class="ev-name">' + ev.name + '</div>' +
+      '<div class="ev-price">¥' + ev.price.toLocaleString() + ' / 組</div>';
+    (function(evRef) {
+      d.onclick = function(e) {
+        if (e.target.tagName === 'LABEL' || e.target.tagName === 'INPUT') return;
+        toggleEv(evRef);
+      };
+      d.querySelector('input[type=checkbox]').addEventListener('change', function() {
+        toggleEv(evRef);
+      });
+    })(ev);
+    grid.appendChild(d);
+  });
+}
+
+function toggleEv(ev) {
+  var card = document.getElementById('ev-' + ev.id);
+  var cb   = document.getElementById('cb-' + ev.id);
+  if (selectedEvents[ev.id]) {
+    delete selectedEvents[ev.id];
+    card.classList.remove('selected');
+    if (cb) cb.checked = false;
+  } else {
+    selectedEvents[ev.id] = ev;
+    card.classList.add('selected');
+    if (cb) cb.checked = true;
+  }
+  updateTotal();
+}
+
+function updateTotal() {
+  var total = Object.values(selectedEvents).reduce(function(sum, ev) { return sum + ev.price; }, 0);
+  document.getElementById('totalAmount').textContent = '¥' + total.toLocaleString();
+  return total;
+}
+
+/* ===== エラー表示 ===== */
+function showErr(id, bad) {
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle('show', bad);
+}
+
+/* ===== バリデーション ===== */
+function validate() {
+  var ok = true;
+  function req(id) {
+    var v = document.getElementById(id).value.trim();
+    var bad = !v; showErr(id + '-err', bad);
+    document.getElementById(id).classList.toggle('err', bad);
+    if (bad) ok = false;
+  }
+  function checkReg(p1Id, p2Id, errId) {
+    var p1 = document.getElementById(p1Id).value.trim();
+    var p2 = document.getElementById(p2Id).value.trim();
+    var bad = p1.length !== 1 || p2.length !== 3;
+    showErr(errId, bad);
+    document.getElementById(p1Id).classList.toggle('err', bad);
+    document.getElementById(p2Id).classList.toggle('err', bad);
+    if (bad) ok = false;
+  }
+  checkReg('regLeaderP1', 'regLeaderP2', 'regLeader-err');
+  checkReg('regPartnerP1', 'regPartnerP2', 'regPartner-err');
+  req('leaderKanji'); req('leaderKana'); req('partnerKanji'); req('partnerKana');
+
+  var emailVal = document.getElementById('email').value.trim();
+  var emailBad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+  showErr('email-err', emailBad);
+  document.getElementById('email').classList.toggle('err', emailBad);
+  if (emailBad) ok = false;
+
+  var zip = document.getElementById('zip').value.replace(/[^0-9]/g,'');
+  var zipBad = zip.length !== 7;
+  showErr('zip-err', zipBad);
+  document.getElementById('zip').classList.toggle('err', zipBad);
+  if (zipBad) ok = false;
+
+  req('pref'); req('phone');
+
+  if (!Object.keys(selectedEvents).length) { showErr('events-err', true); ok = false; }
+  else showErr('events-err', false);
+
+  var td = document.getElementById('transferDate').value.trim();
+  showErr('transferDate-err', !td); if (!td) ok = false;
+  req('transferName');
+  req('transferAmount');
+
+  return ok;
+}
+
+/* ===== 確認画面 ===== */
+function goConfirm() {
+  if (!validate()) {
+    document.querySelector('.err-msg.show')?.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  var regLeader  = getRegNo('regLeaderP1','regLeaderP2');
+  var regPartner = getRegNo('regPartnerP1','regPartnerP2');
+  var leaderKanji = document.getElementById('leaderKanji').value.trim();
+  var leaderKana  = document.getElementById('leaderKana').value.trim();
+  var partnerKanji = document.getElementById('partnerKanji').value.trim();
+  var partnerKana  = document.getElementById('partnerKana').value.trim();
+  var leaderSchool  = document.getElementById('leaderSchool').value.trim() || '未記入';
+  var partnerSchool = document.getElementById('partnerSchool').value.trim() || '未記入';
+  var zip = document.getElementById('zip').value.trim();
+  var pref = document.getElementById('pref').value.trim();
+  var city = document.getElementById('city').value.trim();
+  var banchi = document.getElementById('banchi').value.trim();
+  var addrVal = pref + city + banchi;
+  var phone = document.getElementById('phone').value.trim();
+  var emailVal = document.getElementById('email').value.trim();
+  var total = updateTotal();
+  var tdRaw = document.getElementById('transferDate').value;
+  var transferName = document.getElementById('transferName').value.trim();
+  var transferAmount = document.getElementById('transferAmount').value.trim();
+  var tdDisp = '';
+  if (tdRaw) {
+    var parts = tdRaw.split('-');
+    tdDisp = parts[0] + '年' + parts[1] + '月' + parts[2] + '日';
+  }
+  var selEvList = Object.values(selectedEvents).map(function(ev) {
+    return '【No.' + ev.no + '】' + ev.name + '（¥' + ev.price.toLocaleString() + '）';
+  });
+
+  document.getElementById('c-regLeader').textContent = regLeader;
+  document.getElementById('c-regPartner').textContent = regPartner;
+  document.getElementById('c-leaderName').textContent = leaderKanji + '（' + leaderKana + '）';
+  document.getElementById('c-partnerName').textContent = partnerKanji + '（' + partnerKana + '）';
+  document.getElementById('c-leaderSchool').textContent = leaderSchool;
+  document.getElementById('c-partnerSchool').textContent = partnerSchool;
+  document.getElementById('c-zip').textContent = zip;
+  document.getElementById('c-address').textContent = addrVal;
+  document.getElementById('c-phone').textContent = phone;
+  document.getElementById('c-email').textContent = emailVal;
+  document.getElementById('c-events').textContent = selEvList.join('\n');
+  document.getElementById('c-total').textContent = '¥' + total.toLocaleString();
+  document.getElementById('c-transferDate').textContent = tdDisp;
+  document.getElementById('c-transferName').textContent = transferName;
+  document.getElementById('c-transferAmount').textContent = '¥' + transferAmount;
+
+  document.getElementById('formView').style.display = 'none';
+  document.getElementById('confirmView').style.display = 'block';
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step1').classList.add('done');
+  document.getElementById('step2').classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function goBack() {
+  document.getElementById('confirmView').style.display = 'none';
+  document.getElementById('formView').style.display = 'block';
+  document.getElementById('step2').classList.remove('active');
+  document.getElementById('step1').classList.remove('done');
+  document.getElementById('step1').classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ===== 送信処理 ===== */
+async function submitEntry() {
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+
+  var regLeader  = getRegNo('regLeaderP1','regLeaderP2');
+  var regPartner = getRegNo('regPartnerP1','regPartnerP2');
+  var leaderKanji = document.getElementById('leaderKanji').value.trim();
+  var leaderKana  = document.getElementById('leaderKana').value.trim();
+  var partnerKanji = document.getElementById('partnerKanji').value.trim();
+  var partnerKana  = document.getElementById('partnerKana').value.trim();
+  var leaderSchool  = document.getElementById('leaderSchool').value.trim() || '未記入';
+  var partnerSchool = document.getElementById('partnerSchool').value.trim() || '未記入';
+  var pref = document.getElementById('pref').value.trim();
+  var city = document.getElementById('city').value.trim();
+  var banchi = document.getElementById('banchi').value.trim();
+  var addrVal = pref + city + banchi;
+  var phone = document.getElementById('phone').value.trim();
+  var emailVal = document.getElementById('email').value.trim();
+  var total = updateTotal();
+  var tdRaw = document.getElementById('transferDate').value;
+  var transferName = document.getElementById('transferName').value.trim();
+  var transferAmount = document.getElementById('transferAmount').value.trim();
+  var tdDisp = '';
+  if (tdRaw) {
+    var parts = tdRaw.split('-');
+    tdDisp = parts[0] + '年' + parts[1] + '月' + parts[2] + '日';
+  }
+  var selEvList = Object.values(selectedEvents).map(function(ev) {
+    return '【No.' + ev.no + '】' + ev.name + '（¥' + ev.price.toLocaleString() + '）';
+  });
+
+  var messageBody =
+    '【大会開催日】' + EVENT_DATE + '\n' +
+    'リーダー登録番号：' + regLeader + '\n' +
+    'パートナー登録番号：' + regPartner + '\n' +
+    'リーダー：' + leaderKanji + '（' + leaderKana + '）\n' +
+    'パートナー：' + partnerKanji + '（' + partnerKana + '）\n' +
+    'リーダー所属教室：' + leaderSchool + '\n' +
+    'パートナー所属教室：' + partnerSchool + '\n' +
+    '住所：' + addrVal + '\n' +
+    'TEL：' + phone + '\n' +
+    'メール：' + emailVal + '\n' +
+    '出場競技：\n' + selEvList.join('\n') + '\n' +
+    '合計：¥' + total.toLocaleString() + '\n' +
+    '振込日：' + tdDisp + '\n' +
+    '振込人名：' + transferName + '\n' +
+    '振込金額：¥' + transferAmount;
+
+  var gasPayload = {
+    regLeader:      regLeader,
+    regPartner:     regPartner,
+    leaderKanji:    leaderKanji,
+    leaderKana:     leaderKana,
+    partnerKanji:   partnerKanji,
+    partnerKana:    partnerKana,
+    leaderSchool:   leaderSchool,
+    partnerSchool:  partnerSchool,
+    address:        addrVal,
+    phone:          "'" + phone,
+    events:         selEvList.join(' / '),
+    totalFee:       '¥' + total.toLocaleString(),
+    email:          emailVal,
+    transferDate:   tdDisp,
+    transferName:   transferName,
+    transferAmount: transferAmount,
+  };
+
+  var params = {
+    to_email:  'jdc.chubu@gmail.com',
+    to_name:   leaderKanji + ' / ' + partnerKanji,
+    subject:   '【プロ】競技会申し込み書',
+    from_name: '2026中部ダンスフェスティバル in 名古屋　申込受付',
+    message:   messageBody,
+    reply_to:  emailVal,
+    cc_email:  emailVal,
+  };
+
+  try {
+    fetch(GAS_URL, {
+      method:  'POST',
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(gasPayload),
+    });
+  } catch(_) {}
+
+  try {
+    await emailjs.send('service_guqkzna', 'template_yjehnbv', params);
+    document.getElementById('confirmView').style.display = 'none';
+    document.getElementById('completeView').style.display = 'block';
+    document.getElementById('step2').classList.remove('active');
+    document.getElementById('step2').classList.add('done');
+    document.getElementById('step3').classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  } catch(err) {
+    alert('メール送信に失敗しました。\n電波の良い場所で再度お試しください。\n\nエラー：' + (err.text || err.message || JSON.stringify(err)));
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> この内容で申し込む';
+  }
+}
+
+/* ===== 初期化 ===== */
+buildEvCards();
+</script>
+</body>
+</html>
